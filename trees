@@ -1,0 +1,36 @@
+# 111. Minimum Depth of Binary Tree
+
+## Problem
+Minimum Depth of Binary Tree
+
+Given a binary tree, return its minimum depth.
+
+**Minimum depth** is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+
+## Approach
+
+I used **Breadth-First Search (BFS)** with a queue.
+
+### Key Insight
+Since BFS explores nodes level by level, the first leaf node encountered will always be at the minimum depth.
+
+Steps:
+1. Start from the root node.
+2. Traverse the tree level by level.
+3. Check if the current node is a leaf node.
+4. Return the current depth as soon as a leaf node is found.
+
+## Complexity Analysis
+
+- Time Complexity: **O(n)**
+- Space Complexity: **O(n)**
+
+## What I Learned
+
+- BFS is often the best choice when searching for the shortest path or minimum distance in trees.
+- For minimum depth, BFS can terminate early once the first leaf is found.
+- DFS also works, but BFS is generally more intuitive for this problem.
+
+## Tags
+
+`Binary Tree` `BFS` `Queue` `Tree Traversal`
