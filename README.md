@@ -1,2 +1,6 @@
 # leetcode-solutions
-solving Leetcode problems everyday to increase my thinking ability and master the decision making ability 
+solving Leetcode problems everyday to master algorithms and data structures.
+<br>
+
+starting with easy problems to hard once.
+
