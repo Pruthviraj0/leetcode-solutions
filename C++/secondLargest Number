@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int secondlargest(vector<int>& arr){
+    int largest=0;
+    int second=0;
+        for(int x:arr){
+            if(x>largest){
+                second=largest;
+                largest=x;
+            }
+            else if(x>second && x<largest){
+                second=x;
+            }
+        }
+         return second;
+}
+
+
+int main(){
+    vector<int> arr={23,45,23,12,4};
+    cout<<secondlargest(arr);
+    
+    return 0;
+}
