@@ -1,0 +1,12 @@
+class Solution {
+  public:
+    bool isSorted(vector<int>& arr) {
+        // code here
+        for(int i=0;i<arr.size()-1;i++){ //if we dont substract 1 it will have no last element to compare with so it will always fire false;
+            if(arr[i]>arr[i+1]){
+                return false;
+        }
+    }
+    return true;
+    }
+};
