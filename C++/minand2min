@@ -1,0 +1,26 @@
+#min and second min
+
+class Solution {
+  public:
+  vector<int> minAnd2ndMin(vector<int> &arr) {
+	// code here
+	int smallest=INT_MAX;
+	int secondSmallest=INT_MAX;
+
+	for(int x : arr) {
+		if(x<smallest) {
+			
+			secondSmallest=smallest;
+			smallest=x;
+		}
+		else if(x >smallest && x<secondSmallest) {
+			secondSmallest=x;
+		}
+	}
+	if(secondSmallest==INT_MAX){
+	    
+	    return {-1};
+	}
+	return {smallest,secondSmallest};
+}
+};
