@@ -1,3 +1,6 @@
+//this is a method in which we dont have to use the hashmap but it costs more time complexity, here we use simple two pointer technique.
+//using hashmap is more efficient
+
 #include <iostream>
 #include <vector>
 using namespace std;
