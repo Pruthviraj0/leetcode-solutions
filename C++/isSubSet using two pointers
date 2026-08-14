@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int isSubset(vector<int>&a, vector<int>&b){
+    int i=0;
+    int j=0;
+    sort(a.begin(), a.end());
+    sort(b.begin(), b.end());
+    
+    while( i<a.size() && j<b.size()){
+        if(a[i]==b[j]){
+            i++;
+            j++;
+        }
+        else{
+            i++;
+        }
+    }
+    if(j==b.size()){
+        return true;
+    };
+    
+    return false;
+}
+
+int main(){
+    vector<int>a={1,2,3,12,34,21};
+    vector<int>b={1,2,4};
+    
+    cout<<isSubset(a,b);
+}
