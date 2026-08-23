@@ -1,0 +1,29 @@
+//sliding window technique- we use when we have  perform operations on subarray 
+//sub arrays are continous means 10,20,30 then 10,30 is not subarray.
+//Max Sub Array 
+//first check for arr[i] is greater or equal to k,then sub i form k,add next arr[i] into sum(5), we'll get our max sub array.
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int maxSumSubarray(vector<int> &arr, int k){
+
+int n=arr.size();
+int ans=0;
+int sum=0;
+    
+for(int i=0;i<n;i++){
+    sum=sum+arr[i];
+    if(i>=k){
+        sum=sum-arr[i-k];//sum-=arr[i-k]
+        ans=max(ans, sum);
+    }
+}
+    return ans;
+}
+int main(){
+    vector<int> arr={1,2,3,4,5,6,7,8,9};
+    int k=4;
+    cout<<maxSumSubarray(arr,k);
+    return 0;
+}
