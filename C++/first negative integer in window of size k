@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+#include <deque>
+using namespace std;
+
+vector<int> returnNegative(vector<int>& arr, int k) {
+    deque<int> negative;  // stores indices of negative numbers
+    vector<int> ans;
+
+    for (int i = 0; i < arr.size(); i++) {
+
+        // Store index if current element is negative
+        if (arr[i] < 0) {
+            negative.push_back(i);
+        }
+
+        // Remove negative indices that are outside the window
+        if (!negative.empty() && negative.front() <= i - k) {
+            negative.pop_front();
+        }
+
+        // Window is of size k
+        if (i >= k - 1) {
+            if (negative.empty()) {
+                ans.push_back(0);
+            } else {
+                ans.push_back(arr[negative.front()]);
+            }
+        }
+    }
+
+    return ans;
+}
+
+int main() {
+    vector<int> arr = {-1, 0, 3, 5, -4, -3, 4, -1};
+    int k = 2;
+
+    vector<int> ans = returnNegative(arr, k);
+
+    for (int x : ans) {
+        cout << x << " ";
+    }
+
+    return 0;
+}
