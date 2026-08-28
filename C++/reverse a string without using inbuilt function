@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+int main(){
+   
+   string str;
+   cout<<"enter your string : ";
+   cin>>str;
+
+   int n=str.size();
+
+    for( int i=0;i<n/2;i++){
+
+        int temp=str[i];
+
+        str[i]=str[n-1-i];
+
+        str[n-1-i]=temp;
+    }
+    cout<<str;
+    return 0;
+}
