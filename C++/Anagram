@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+#include <map> 
+using namespace std;
+//string
+//Anagram
+//if two string have same no. of characters and frequency.
+//use two maps and just compare with each other.
+
+int Anagram(string& str1, string& str2){
+   
+   map<char,int>mp1;
+   map<char,int>mp2;
+   
+   for(int i=0;i<str1.size();i++){
+       
+       char ch=str1[i];
+       
+       mp1[ch]++;
+       
+   }
+   for(int i=0;i<str2.size();i++){
+       
+      char ch=str2[i];
+       
+       mp2[ch]++;
+       
+   }
+   if(mp1==mp2){
+       return true;
+   }
+   return false;
+   
+}
+
+   
+
+int main(){
+    string str1={"abc"};
+    string str2={"cab"};
+    cout<<Anagram(str1,str2);
+    
+    return 0;
+}
