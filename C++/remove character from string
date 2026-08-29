@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+#include <map>
+#include <string>
+using namespace std;
+//string
+//remove characters
+//remove character from first string which are prestent in the second string
+string removeChacters(string& s1, string & s2){
+   int n=s1.size();
+   int m=s2.size();
+   
+   map<char,int> mp1;
+  string ans;
+   
+   for(int i=0;i<m;i++){
+      
+       mp1[s2[i]]++;
+   }
+   
+   for(int i=0;i<n;i++){
+       char ch=s1[i];
+       
+       if(mp1[ch]==0){
+           ans=ans+ch;
+       }
+   }
+   return ans;
+   
+}
+int main(){
+    string s1={"abcdefghijk"};
+    string s2={"cat"};
+    cout<<removeChacters(s1,s2);
+    
+    return 0;
+}
