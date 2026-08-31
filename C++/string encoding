@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+using namespace std;
+string stringEncoding(string &s){
+    int n=s.size();
+    string ans;
+
+    for(int i=0;i<n;i++){
+        int count =1;
+
+        while(i+1<n && s[i]==s[i+1]){
+            count++;
+            i++;
+        }
+        ans+=s[i];
+        ans+=to_string(count);
+    }
+    return ans;
+}
+int main() 
+{
+    string s={"aaabccdddd"};
+    string encoded=stringEncoding(s);
+    cout<<encoded;
+    return 0;
+}
