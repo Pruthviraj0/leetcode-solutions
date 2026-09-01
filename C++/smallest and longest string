@@ -1,0 +1,35 @@
+class Solution {
+public:
+    vector<string> smallerAndLarge(string &s) {
+
+        string smallest = "";
+        string longest = "";
+        string word = "";
+
+        for (int i = 0; i <= s.length(); i++) {
+
+            if (i == s.length() || s[i] == ' ') {
+
+                if (!word.empty()) {
+
+                    //first smallest one
+                    if (smallest.empty() || word.length() < smallest.length()) {
+                        smallest = word;
+                    }
+
+                    // Last largest word
+                    if (longest.empty() || word.length() >= longest.length()) {
+                        longest = word;
+                    }
+
+                    word = "";
+                }
+            }
+            else {
+                word += s[i];
+            }
+        }
+
+        return {smallest, longest};
+    }
+};
