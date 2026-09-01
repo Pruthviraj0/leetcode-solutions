@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+vector<string> sepCharDigiAndSpecial(string &s){
+    string number="";
+    string character="";
+    string special ="";
+
+    for(int i=0;i<s.length();i++){
+
+        if(isdigit(s[i])){
+            number+=s[i];
+        }
+        else if(isalpha(s[i])){
+            character+=s[i];
+        }
+        else{
+            special+=s[i];
+        }
+    }
+    return {character, number, special};
+}
+
+
+int main() 
+{   
+  string s = "heloo123+_*&";
+
+    vector<string> result = sepCharDigiAndSpecial(s);
+
+    cout << "Characters: " << result[0] << endl;
+    cout << "Numbers: " << result[1] << endl;
+    cout << "Special: " << result[2] << endl;
+
+ 
+    
+    return 0;
+}
