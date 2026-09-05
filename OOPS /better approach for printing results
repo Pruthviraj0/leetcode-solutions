@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+//OOPS
+
+// USER DEFINED DATA TYPE 
+
+class student{
+    public:
+
+    string name;
+    int rollno;
+    float cgpa;
+};
+
+void print(student c){
+    cout<<c.name<< " "<<c.rollno<< " "<<c.cgpa<<endl;
+}
+
+int main(){
+    student s;
+    student s1;
+
+    s.name="himanshu";
+    s.rollno=23;
+    //s.cgpa=7.98;
+    cout<<"enter the cgpa of "<<s.name<<" : ";
+    cin>>s.cgpa;
+
+    s1.name="ravan";
+    s1.rollno=666;
+    s1.cgpa=10.0;
+
+    print(s);
+    print(s1);
+   
+    
+    return 0;
+}
